@@ -1,0 +1,121 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" rel="stylesheet">
+    <link rel="stylesheet" href="/static/tom_common/css/main.css">
+    
+    
+    <link rel="icon" type="image/png" href="/static/tom_common/img/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="/static/tom_common/img/favicon-16x16.png" sizes="16x16" />
+
+    <script crossorigin="anonymous" integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script crossorigin="anonymous" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+<script crossorigin="anonymous" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+
+    <title>TOM Toolkit | Submit Observation</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+      <a class="navbar-brand" href="/"><img src="/static/tom_common/img/icon.png" class="img-fluid">TOM Toolkit</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item ">
+            <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="/targets/">Targets</a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="/alerts/query/list/">Alerts</a>
+          </li>
+          <li class="nav-item active">
+              <a class="nav-link" href="/observations/list/">Observations</a>
+          </li>
+          <li class="nav-item ">
+              <a class="nav-link" href="/dataproducts/data/">Data</a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="/users/">Users</a>
+          </li>
+        </ul>
+        <ul class="navbar-nav ml-auto">
+        
+          <li class="nav-item">
+            
+            <a class="nav-link" href="/accounts/update/">Kay-Sebastian Nikolaus</a>
+            
+          </li>
+          <li>
+            <a class="btn btn-outline-success" title="logout" href="/accounts/logout/">Logout</a>
+          </li>
+        
+      </div>
+    </nav>
+
+    <main role="main" class="container">
+      
+
+
+      <div class="content">
+        
+<h3>Submit an observation to LCO</h3>
+
+
+<form  action="/observations/LCO/create/" method="post" > <input type="hidden" name="csrfmiddlewaretoken" value="5fbs83C3mH1UVDTRN0MduJtImMlxwntmpWGENxtgyjEpYjdJ55rUXkz44bA6oCyU"> <input type="hidden" name="facility" value="LCO" id="id_facility"> <input type="hidden" name="target_id" value="6" id="id_target_id">
+
+<div  
+    class="form-row" > <div  
+    class="col" > <div id="div_id_group_id" class="form-group"> <label for="id_group_id" class="col-form-label  requiredField">
+                Group id<span class="asteriskField">*</span> </label> <div class=""> <input type="text" name="group_id" class="textinput textInput form-control" required id="id_group_id"> </div> </div> <div id="div_id_proposal" class="form-group"> <label for="id_proposal" class="col-form-label  requiredField">
+                Proposal<span class="asteriskField">*</span> </label> <div class=""> <select name="proposal" class="select form-control" id="id_proposal"> <option value="KEY2017AB-004">ROME/REA - A three-color window to planets beyond the snow-line (KEY2017AB-004)</option>
+
+</select> </div> </div> <div id="div_id_ipp_value" class="form-group"> <label for="id_ipp_value" class="col-form-label  requiredField">
+                Ipp value<span class="asteriskField">*</span> </label> <div class=""> <input type="number" name="ipp_value" step="any" class="numberinput form-control" required id="id_ipp_value"> </div> </div> <div id="div_id_observation_type" class="form-group"> <label for="id_observation_type" class="col-form-label  requiredField">
+                Observation type<span class="asteriskField">*</span> </label> <div class=""> <select name="observation_type" class="select form-control" id="id_observation_type"> <option value="NORMAL">Normal</option> <option value="TARGET_OF_OPPORTUNITY">Rapid Response</option>
+
+</select> </div> </div> <div id="div_id_start" class="form-group"> <label for="id_start" class="col-form-label  requiredField">
+                Start<span class="asteriskField">*</span> </label> <div class=""> <input type="date" name="start" class="textinput textInput form-control" required id="id_start"> </div> </div> <div id="div_id_end" class="form-group"> <label for="id_end" class="col-form-label  requiredField">
+                End<span class="asteriskField">*</span> </label> <div class=""> <input type="date" name="end" class="textinput textInput form-control" required id="id_end"> </div> </div> </div>
+<div  
+    class="col" > <div id="div_id_filter" class="form-group"> <label for="id_filter" class="col-form-label  requiredField">
+                Filter<span class="asteriskField">*</span> </label> <div class=""> <select name="filter" class="select form-control" id="id_filter"> <option value="opaque">opaque</option> <option value="150um-pinhole">150um-pinhole</option> <option value="r">r</option> <option value="rp">rp</option> <option value="c3">c3</option> <option value="b">b</option> <option value="zs">zs</option> <option value="air">air</option> <option value="nh2">nh2</option> <option value="cr">cr</option> <option value="y">y</option> <option value="i">i</option> <option value="slit_1.6as">slit_1.6as</option> <option value="h-beta">h-beta</option> <option value="up">up</option> <option value="gp">gp</option> <option value="100um-pinhole">100um-pinhole</option> <option value="slit_1.2as">slit_1.2as</option> <option value="slit_2.0as">slit_2.0as</option> <option value="oiii">oiii</option> <option value="400um-pinhole">400um-pinhole</option> <option value="nd">nd</option> <option value="slit_6.0as">slit_6.0as</option> <option value="u">u</option> <option value="v*nd">v*nd</option> <option value="d51">d51</option> <option value="ip">ip</option> <option value="b*nd">b*nd</option> <option value="w">w</option> <option value="c2">c2</option> <option value="skymapper-vs">skymapper-vs</option> <option value="oh">oh</option> <option value="200um-pinhole">200um-pinhole</option> <option value="h-alpha">h-alpha</option> <option value="astrodon-uv">astrodon-uv</option> <option value="cn">cn</option> <option value="r*nd">r*nd</option> <option value="solar">solar</option> <option value="i*nd">i*nd</option> <option value="v">v</option>
+
+</select> </div> </div> <div id="div_id_instrument_name" class="form-group"> <label for="id_instrument_name" class="col-form-label  requiredField">
+                Instrument name<span class="asteriskField">*</span> </label> <div class=""> <select name="instrument_name" class="select form-control" id="id_instrument_name"> <option value="1M0-NRES-SCICAM">1M0-NRES-SCICAM</option> <option value="1M0-NRES-COMMISSIONING">1M0-NRES-COMMISSIONING</option> <option value="1M0-SCICAM-SINISTRO">1M0-SCICAM-SINISTRO</option> <option value="0M4-SCICAM-SBIG">0M4-SCICAM-SBIG</option> <option value="2M0-SCICAM-SPECTRAL">2M0-SCICAM-SPECTRAL</option> <option value="2M0-SCICAM-SBIG">2M0-SCICAM-SBIG</option> <option value="2M0-FLOYDS-SCICAM">2M0-FLOYDS-SCICAM</option>
+
+</select> </div> </div> <div id="div_id_exposure_count" class="form-group"> <label for="id_exposure_count" class="col-form-label  requiredField">
+                Exposure count<span class="asteriskField">*</span> </label> <div class=""> <input type="number" name="exposure_count" min="1" class="numberinput form-control" required id="id_exposure_count"> </div> </div> <div id="div_id_exposure_time" class="form-group"> <label for="id_exposure_time" class="col-form-label  requiredField">
+                Exposure time<span class="asteriskField">*</span> </label> <div class=""> <input type="number" name="exposure_time" min="0.1" step="any" class="numberinput form-control" required id="id_exposure_time"> </div> </div> <div id="div_id_max_airmass" class="form-group"> <label for="id_max_airmass" class="col-form-label  requiredField">
+                Max airmass<span class="asteriskField">*</span> </label> <div class=""> <input type="number" name="max_airmass" step="any" class="numberinput form-control" required id="id_max_airmass"> </div> </div> </div>
+
+</div> <div class="form-group"> <div class=""> <input type="submit"
+    name="submit"
+    value="Submit"
+    
+        class="btn btn-primary"
+        id="submit-id-submit"
+    
+    
+    /> </div> </div> </form>
+
+
+      </div>
+
+    </main>
+
+  
+    
+    
+    
+  </body>
+</html>
