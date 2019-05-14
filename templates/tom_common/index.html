@@ -2,7 +2,7 @@
 {% load static targets_extras observation_extras dataproduct_extras tom_common_extras %}
 {% block title %}Home{% endblock %}
 {% block content %}
-{% load myplots_tags %}
+{% load pyLIMA_testplot_tags %}
 <div class="row">
   <div class="col-md-8">
     <h2 class="text-center">Local Target and Observation Manager</h2>
@@ -30,6 +30,19 @@
       </div>
       {% recent_targets %}
   </div>
-  {% targets_reduceddata %}
+    <br/>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <div class="card">
+            <p class="text-center"><img src={% static 'img/pyLIMA1.png' %} class="img-fluid mx-auto"></p>
+        </div>
+    </div>
+    <div class="col-md-8">
+        <div class="card">
+            <p class="text-center"><img src={% static 'img/pyLIMA2.png' %} class="img-fluid mx-auto"></p>
+        </div>
+    </div>
 </div>
 {% endblock %}

@@ -1,0 +1,4 @@
+source pyLIMA_testinstall/bin/activate
+cd TOM-Development
+python pyLIMA_testplot.py
+./manage.py runserver

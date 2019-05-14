@@ -4,21 +4,27 @@ from tom_targets.models import Target
 from django import forms
 import requests
 
+
 broker_url = 'https://gist.githubusercontent.com/mgdaily/f5dfb4047aaeb393bf1996f0823e1064/raw/6fe1680f22b86467c50a21a138177838378eb143/example_broker_data.json'
 
 class MyBrokerForm(GenericQueryForm):
-    name = forms.CharField(required=True)
+    mag_min = forms.IntegerField(required=True)
+    mag_max = forms.IntegerField(required=True)
+    ra = forms.FloatField(required=False)
+    name = forms.CharField(required=False)
 
 class MyBroker:
-    name = 'BOTHAN'
+    name = 'MyBroker'
     form = MyBrokerForm
 
     @classmethod
     def fetch_alerts(clazz, parameters):
+        #print(parameters)
         response = requests.get(broker_url)
         response.raise_for_status()
         test_alerts = response.json()
-        return [alert for alert in test_alerts if alert['name'] == parameters['name']]
+        #print(test_alerts)
+        return [alert for alert in test_alerts if alert['ra'] == parameters['ra'] or alert['name'] == parameters['name'] and alert['mag'] > parameters['mag_min'] and alert['mag'] < parameters['mag_max']]
 
     @classmethod
     def fetch_alert(clazz, alert_id):
